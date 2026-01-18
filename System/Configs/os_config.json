@@ -1,0 +1,49 @@
+{
+    "os_name": "AI Business OS",
+    "version": "1.0.0",
+    "created": "2026-01-19",
+    "owner": "Alex",
+    "description": "AI-powered operating system for managing business operations with strategic alignment",
+    "paths": {
+        "strategy": "01_Strategy/",
+        "projects": "02_Projects/",
+        "operations": "03_Operations/",
+        "knowledge": "04_Knowledge/",
+        "memory": "05_Memory/",
+        "archives": "06_Archives/",
+        "system": "System/"
+    },
+    "agents": {
+        "ruthless_prioritizer": "System/Agents/ruthless_prioritizer.md",
+        "content_architect": "System/Agents/content_architect.md",
+        "librarian": "System/Agents/librarian.md"
+    },
+    "routines": {
+        "daily_start": "System/Routines/daily_start.md",
+        "brain_dump": "System/Routines/brain_dump.md",
+        "weekly_review": "System/Routines/weekly_review.md"
+    },
+    "strategy_files": {
+        "north_star": "01_Strategy/North_Star.md",
+        "strategic_vehicle": "01_Strategy/Strategic_Vehicle.md",
+        "current_bottleneck": "01_Strategy/Current_Bottleneck.md",
+        "brand_voice": "01_Strategy/Brand_Voice.md"
+    },
+    "defaults": {
+        "priority_kill_threshold": 7,
+        "bottleneck_review_frequency": "daily",
+        "strategy_review_frequency": "weekly",
+        "log_retention_months": 12
+    },
+    "ai_instructions": {
+        "before_any_task": [
+            "Read 01_Strategy/North_Star.md",
+            "Read 01_Strategy/Current_Bottleneck.md",
+            "Validate task alignment before execution"
+        ],
+        "after_any_session": [
+            "Append summary to current work log",
+            "Update task status in Task_Database.json"
+        ]
+    }
+}

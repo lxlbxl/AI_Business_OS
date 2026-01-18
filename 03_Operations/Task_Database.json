@@ -1,0 +1,62 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "created": "2026-01-19",
+    "last_updated": "2026-01-19"
+  },
+  "tasks": [
+    {
+      "id": "TASK-001",
+      "name": "Set up AI Business OS",
+      "description": "Initialize the complete AI Business Operating System structure",
+      "priority": "HIGH",
+      "strategic_alignment": true,
+      "bottleneck_link": "Foundation Setup",
+      "project": null,
+      "due_date": "2026-01-19",
+      "status": "IN_PROGRESS",
+      "created_at": "2026-01-19",
+      "completed_at": null,
+      "tags": ["setup", "infrastructure"],
+      "estimated_hours": 2,
+      "actual_hours": null,
+      "notes": "Initial system setup task"
+    },
+    {
+      "id": "TASK-002",
+      "name": "Define North Star metrics",
+      "description": "Fill in specific metrics and targets in North_Star.md",
+      "priority": "HIGH",
+      "strategic_alignment": true,
+      "bottleneck_link": "Clarity",
+      "project": null,
+      "due_date": "2026-01-19",
+      "status": "TODO",
+      "created_at": "2026-01-19",
+      "completed_at": null,
+      "tags": ["strategy", "planning"],
+      "estimated_hours": 1,
+      "actual_hours": null,
+      "notes": ""
+    },
+    {
+      "id": "TASK-003",
+      "name": "Identify Strategic Vehicle",
+      "description": "Define the single product/service path in Strategic_Vehicle.md",
+      "priority": "HIGH",
+      "strategic_alignment": true,
+      "bottleneck_link": "Direction",
+      "project": null,
+      "due_date": "2026-01-19",
+      "status": "TODO",
+      "created_at": "2026-01-19",
+      "completed_at": null,
+      "tags": ["strategy", "planning"],
+      "estimated_hours": 1,
+      "actual_hours": null,
+      "notes": ""
+    }
+  ],
+  "status_options": ["TODO", "IN_PROGRESS", "BLOCKED", "DONE", "KILLED"],
+  "priority_options": ["HIGH", "MEDIUM", "LOW"]
+}
