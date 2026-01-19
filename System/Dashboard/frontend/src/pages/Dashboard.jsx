@@ -79,14 +79,14 @@ export default function Dashboard() {
                     </div>
 
                     <div className="header-status">
-                        {status?.aiConfigured ? (
+                        {status?.claudeCodeAvailable ? (
                             <div className="status-badge status-online">
                                 <Sparkles size={14} />
-                                <span>AI Online</span>
+                                <span>Claude Code Connected</span>
                             </div>
                         ) : (
                             <div className="status-badge status-offline">
-                                <span>AI Offline - Configure API Key</span>
+                                <span>Claude Code Offline</span>
                             </div>
                         )}
                     </div>

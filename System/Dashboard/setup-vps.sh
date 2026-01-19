@@ -1,18 +1,19 @@
 #!/bin/bash
 # AI Business OS - VPS Setup Script for Ubuntu 24.04
-# Run this script on your VPS to deploy the dashboard
+# Uses Claude Code CLI for AI interactions
 
 set -e
 
 echo "╔════════════════════════════════════════════════════════╗"
 echo "║       AI BUSINESS OS - VPS SETUP SCRIPT                ║"
+echo "║       Using Claude Code CLI Integration                ║"
 echo "╚════════════════════════════════════════════════════════╝"
 echo ""
 
 # Variables - CUSTOMIZE THESE
 DOMAIN="your-domain.com"  # Change to your domain
 APP_DIR="/var/www/ai-business-os"
-GITHUB_REPO=""  # Optional: your GitHub repo URL
+GITHUB_REPO="https://github.com/lxlbxl/AI_Business_OS.git"
 PORT=7890
 
 # Colors
@@ -55,18 +56,30 @@ apt install -y certbot python3-certbot-nginx
 # Install Git
 apt install -y git
 
+# Install Claude Code CLI
+log_info "Installing Claude Code CLI..."
+if ! command -v claude &> /dev/null; then
+  curl -fsSL https://claude.ai/install.sh | sh
+  log_warn "Claude Code installed. You'll need to run 'claude login' as the www-data user later."
+else
+  log_info "Claude Code CLI already installed"
+fi
+
 # Create app directory
 log_info "Setting up application directory..."
 mkdir -p $APP_DIR
-cd $APP_DIR
 
-# If using Git repo
-if [ -n "$GITHUB_REPO" ]; then
-  log_info "Cloning repository..."
-  git clone $GITHUB_REPO .
+# Clone from GitHub
+if [ -d "$APP_DIR/.git" ]; then
+  log_info "Repository exists, pulling latest..."
+  cd $APP_DIR
+  git pull
 else
-  log_warn "No GitHub repo configured. Please upload files manually to $APP_DIR"
+  log_info "Cloning repository..."
+  git clone $GITHUB_REPO $APP_DIR
 fi
+
+cd $APP_DIR
 
 # Install backend dependencies
 log_info "Installing backend dependencies..."
@@ -79,9 +92,9 @@ if [ ! -f .env ]; then
   cat > .env << EOF
 PORT=$PORT
 JWT_SECRET=$(openssl rand -base64 32)
-ANTHROPIC_API_KEY=your-api-key-here
+ADMIN_PASSWORD=changeme123
 EOF
-  log_warn "Please update ANTHROPIC_API_KEY in $APP_DIR/System/Dashboard/backend/.env"
+  log_warn "Please update ADMIN_PASSWORD in $APP_DIR/System/Dashboard/backend/.env"
 fi
 
 # Install frontend dependencies and build
@@ -104,10 +117,11 @@ WorkingDirectory=$APP_DIR/System/Dashboard/backend
 ExecStart=/usr/bin/node server.js
 Restart=on-failure
 RestartSec=10
-StandardOutput=syslog
-StandardError=syslog
+StandardOutput=journal
+StandardError=journal
 SyslogIdentifier=ai-business-os
 Environment=NODE_ENV=production
+Environment=HOME=/var/www
 
 [Install]
 WantedBy=multi-user.target
@@ -115,6 +129,10 @@ EOF
 
 # Set permissions
 chown -R www-data:www-data $APP_DIR
+
+# Create home directory for www-data (needed for Claude Code)
+mkdir -p /var/www
+chown www-data:www-data /var/www
 
 # Enable and start service
 systemctl daemon-reload
@@ -164,35 +182,38 @@ ufw allow 'Nginx Full'
 ufw allow 22
 ufw --force enable
 
-# SSL Certificate (optional - uncomment if domain is configured)
-# log_info "Setting up SSL certificate..."
-# certbot --nginx -d $DOMAIN --non-interactive --agree-tos --email your@email.com
-
 echo ""
 echo "╔════════════════════════════════════════════════════════╗"
 echo "║                 SETUP COMPLETE!                         ║"
 echo "╠════════════════════════════════════════════════════════╣"
 echo "║                                                         ║"
+echo "║  ⚠️  IMPORTANT: Authenticate Claude Code CLI            ║"
+echo "║                                                         ║"
+echo "║  Run these commands:                                    ║"
+echo "║                                                         ║"
+echo "║    sudo -u www-data -H claude login                    ║"
+echo "║                                                         ║"
+echo "║  This will authenticate Claude for the service user.  ║"
+echo "║                                                         ║"
+echo "╠════════════════════════════════════════════════════════╣"
+echo "║                                                         ║"
 echo "║  1. Update your domain DNS to point to this server     ║"
 echo "║                                                         ║"
-echo "║  2. Edit the backend .env file:                        ║"
-echo "║     nano $APP_DIR/System/Dashboard/backend/.env         "
-echo "║     Add your ANTHROPIC_API_KEY                          ║"
-echo "║                                                         ║"
-echo "║  3. Restart the backend:                                ║"
-echo "║     sudo systemctl restart ai-business-os              ║"
-echo "║                                                         ║"
-echo "║  4. (Optional) Enable SSL:                              ║"
+echo "║  2. (Optional) Enable SSL:                              ║"
 echo "║     sudo certbot --nginx -d $DOMAIN                    ║"
 echo "║                                                         ║"
-echo "║  5. Access your dashboard at:                           ║"
-echo "║     http://$DOMAIN                                     ║"
+echo "║  3. Access your dashboard at:                           ║"
+echo "║     http://$DOMAIN or http://$(hostname -I | awk '{print $1}')  
 echo "║                                                         ║"
-echo "║  Default Login: admin / admin123                        ║"
+echo "║  Default Login: admin / changeme123                     ║"
 echo "║  ⚠️  CHANGE THIS IMMEDIATELY!                          ║"
 echo "║                                                         ║"
 echo "╚════════════════════════════════════════════════════════╝"
 echo ""
 
 # Show service status
-systemctl status ai-business-os --no-pager
+systemctl status ai-business-os --no-pager || true
+
+echo ""
+echo "To authenticate Claude Code CLI, run:"
+echo "  sudo -u www-data -H claude login"
