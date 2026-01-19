@@ -10,8 +10,8 @@ echo "║       Using Claude Code CLI Integration                ║"
 echo "╚════════════════════════════════════════════════════════╝"
 echo ""
 
-# Variables - CUSTOMIZE THESE
-DOMAIN="your-domain.com"  # Change to your domain
+# Variables
+DOMAIN="os.d20.com.ng"
 APP_DIR="/var/www/ai-business-os"
 GITHUB_REPO="https://github.com/lxlbxl/AI_Business_OS.git"
 PORT=7890
