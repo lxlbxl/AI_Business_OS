@@ -1,17 +1,18 @@
 # 🖥️ AI BUSINESS OS
 
-> An AI-powered operating system for managing business operations with strategic alignment and delegated discipline.
+> An AI-powered operating system with an **AI-COO** that runs your business autonomously while keeping you in the loop for critical decisions.
 
 ---
 
 ## 🎯 Core Philosophy
 
-This isn't a collection of files — it's an **environment** where AI creates, manages, and executes:
-- **Skills & Tools** → Knowledge Bank with reusable frameworks
-- **Context** → Strategy files that guide every decision
-- **Memory** → Logs and learnings that compound over time
-- **Discipline** → Automated routines that enforce focus
-- **Execution** → Projects and tasks aligned to a single goal
+This isn't a collection of files — it's a **living operating system** with an AI Chief Operating Officer that:
+
+- **Runs operations autonomously** within defined boundaries
+- **Escalates sensitive decisions** to you (human-in-the-loop)
+- **Follows governance rules** (SOPs, policies, guardrails)
+- **Learns continuously** from every decision
+- **Protects your time** for high-leverage strategic work
 
 ---
 
@@ -19,147 +20,163 @@ This isn't a collection of files — it's an **environment** where AI creates, m
 
 ```
 AI_Business_OS/
-├── 01_Strategy/          # 🎯 The Strategic Layer
-│   ├── North_Star.md           # The ONE obsessional goal
-│   ├── Strategic_Vehicle.md    # The single path to the goal
-│   ├── Current_Bottleneck.md   # The ONE problem to solve now
-│   └── Brand_Voice.md          # Identity & positioning rules
 │
-├── 02_Projects/          # 📂 Active Projects
-│   └── [Each project gets a folder with README, Context, Tasks]
+├── 🏛️ 00_Governance/        # AI-COO Rules & Boundaries
+│   ├── Decision_Authority.md     # What AI can/can't do autonomously
+│   ├── Approval_Matrix.md        # What requires your sign-off
+│   ├── Guardrails.md             # Hard limits (never cross)
+│   ├── Company_Policies.md       # Operating policies
+│   └── Escalation_Protocol.md    # When/how to escalate to you
 │
-├── 03_Operations/        # ⚙️ Daily Operations
-│   ├── Master_Todo.md          # Central task list
-│   ├── Task_Database.json      # Programmatic task tracking
-│   ├── Incoming_Ideas.md       # Brain dump capture zone
-│   └── Daily_Plans/            # Generated daily roadmaps
+├── 🎯 01_Strategy/           # The Strategic Layer
+│   ├── North_Star.md             # The ONE obsessional goal
+│   ├── Strategic_Vehicle.md      # Digital20 Global path
+│   ├── Current_Bottleneck.md     # The ONE problem to solve now
+│   └── Brand_Voice.md            # Identity & positioning rules
 │
-├── 04_Knowledge/         # 📚 The Knowledge Bank
+├── 📂 02_Projects/           # Active Projects
+│   └── [Each project gets a folder]
+│
+├── ⚙️ 03_Operations/         # Daily Operations
+│   ├── Master_Todo.md            # Central task list
+│   ├── Task_Database.json        # Programmatic tracking
+│   ├── Incoming_Ideas.md         # Brain dump capture
+│   ├── Daily_Plans/              # Generated roadmaps
+│   ├── Pending_Approvals/        # Items awaiting your decision
+│   ├── Approved_Actions/         # Audit trail of approvals
+│   └── Decision_Log/             # All decisions with reasoning
+│
+├── 📚 04_Knowledge/          # The Knowledge Bank
 │   ├── Standard_Operating_Procedures/
 │   ├── Frameworks/
 │   └── Templates/
 │
-├── 05_Memory/            # 🧠 The Memory Engine
-│   ├── Work_Logs/              # Daily session logs
+├── 🧠 05_Memory/             # The Memory Engine
+│   ├── Work_Logs/
 │   ├── Meeting_Notes/
 │   └── Decisions/
 │
-├── 06_Archives/          # 🗄️ Completed & Parked
+├── 🗄️ 06_Archives/           # Completed & Parked
 │   ├── Completed_Projects/
-│   └── Icebox.md               # Misaligned ideas for later
+│   └── Icebox.md
 │
-└── System/               # ⚡ The "Kernel"
-    ├── Agents/                 # Specialized AI prompts
-    ├── Routines/               # Automated workflows
-    ├── Configs/                # System configuration
-    └── logging_script.py       # Logging utility
+└── ⚡ System/                # The "Kernel"
+    ├── Agents/
+    │   ├── ai_coo.md             # 🤖 THE AI-COO
+    │   ├── ruthless_prioritizer.md
+    │   ├── content_architect.md
+    │   └── librarian.md
+    ├── Routines/
+    ├── Configs/
+    └── Dashboard/                # Web interface (remote access)
+```
+
+---
+
+## 🤖 The AI-COO Model
+
+### Decision Authority Levels
+
+| Level | Color | Action | Examples |
+|-------|-------|--------|----------|
+| **1** | 🟢 | **Auto-Execute** | Research, drafts, organizing, reports |
+| **2** | 🟡 | **Execute + Notify** | Prioritization changes, icebox moves |
+| **3** | 🟠 | **Request Approval** | External comms, finances, strategy |
+| **4** | 🔴 | **Never Do** | Payments, contracts, credentials |
+
+### Human-in-the-Loop Flow
+
+```
+┌─────────────┐     ┌──────────────┐     ┌─────────────────┐
+│  AI-COO     │     │  Pending     │     │  Human Reviews  │
+│  Identifies │────▶│  Approvals   │────▶│  & Decides      │
+│  Decision   │     │  Queue       │     │                 │
+└─────────────┘     └──────────────┘     └────────┬────────┘
+                                                   │
+                    ┌──────────────────────────────┴─────┐
+                    │                                     │
+                    ▼                                     ▼
+            ┌──────────────┐                    ┌──────────────┐
+            │  ✅ Approved  │                    │  ❌ Rejected  │
+            │  AI Executes │                    │  AI Learns    │
+            └──────────────┘                    └──────────────┘
 ```
 
 ---
 
 ## 🚀 Quick Start
 
-### 1. Define Your Strategy
-Fill in the files in `01_Strategy/`:
-- [ ] Set your North Star goal (one obsessional target)
-- [ ] Define your Strategic Vehicle (the path)
-- [ ] Identify the Current Bottleneck (the constraint)
-- [ ] Establish your Brand Voice (the identity)
-
-### 2. Run Daily Start
-Every morning, invoke the Daily Start routine:
+### 1. Review Governance
+Understand the rules your AI-COO follows:
 ```
-"Run the Daily Start routine from System/Routines/daily_start.md"
+00_Governance/Decision_Authority.md   # What it can do
+00_Governance/Guardrails.md           # What it can never do
 ```
 
-### 3. Capture Ideas → Validate → Execute
-1. Paste ideas into `03_Operations/Incoming_Ideas.md`
-2. Run Brain Dump routine to validate alignment
-3. Aligned ideas → Projects; Misaligned → Icebox
+### 2. Set Your Strategy
+Fill in (already started for Digital20):
+```
+01_Strategy/North_Star.md             # Already: $1M ARR
+01_Strategy/Strategic_Vehicle.md      # Already: Digital20 Global
+01_Strategy/Current_Bottleneck.md     # Define current constraint
+```
 
-### 4. Weekly Review
-Every Sunday, run the Weekly Review to:
-- Assess progress
-- Update bottleneck if resolved
-- Plan the next week
+### 3. Activate AI-COO
+Use the activation prompt in `System/Agents/ai_coo.md` to engage your AI executive.
 
----
-
-## 🤖 Available Agents
-
-| Agent | Purpose | Activation |
-|-------|---------|------------|
-| **Ruthless Prioritizer** | Kill low-impact tasks | "Activate the Ruthless Prioritizer" |
-| **Content Architect** | Create on-brand content | "Activate the Content Architect" |
-| **The Librarian** | Search past work & knowledge | "Activate The Librarian" |
+### 4. Check Pending Approvals
+Regularly review `03_Operations/Pending_Approvals/` for decisions awaiting you.
 
 ---
 
-## ⚡ Available Routines
+## ⚡ Available Workflows
 
-| Routine | When | Purpose |
-|---------|------|---------|
-| **Daily Start** | Every morning | Load context, generate daily plan |
-| **Brain Dump** | When ideas strike | Validate and sort new ideas |
-| **Weekly Review** | Every Sunday | Assess progress, update strategy |
-
----
-
-## 📋 Key Rules
-
-1. **Everything flows from the North Star**
-   - If a task doesn't serve the goal, it doesn't get done
-
-2. **The Bottleneck is sacred**
-   - All work should address the current constraint
-   - When resolved, identify the new one
-
-3. **Nothing gets lost**
-   - All sessions are logged
-   - All learnings are captured
-   - All decisions are documented
-
-4. **Discipline is delegated**
-   - Routines run automatically
-   - AI enforces focus, not willpower
+| Command | What It Does |
+|---------|--------------|
+| `/daily-start` | AI-COO generates today's roadmap |
+| `/brain-dump` | Process ideas against strategy |
+| `/weekly-review` | Assess week, update strategy |
+| `/prioritize` | Ruthlessly cut low-impact tasks |
+| `/librarian` | Search knowledge & memory |
+| `/content` | Create on-brand content |
 
 ---
 
-## 🔧 Extending the OS
+## 🔐 Safety & Control
 
-### Add a New Framework
-1. Create file in `04_Knowledge/Frameworks/`
-2. Use consistent checklist format
-3. Reference in related SOPs
+### You Always Can:
+- ✅ Override any AI decision
+- ✅ Modify governance rules
+- ✅ Stop operations immediately
+- ✅ Review all logs and decisions
+- ✅ Grant or revoke autonomy
 
-### Add a New Agent
-1. Create file in `System/Agents/`
-2. Include activation prompt
-3. Document expected inputs/outputs
-
-### Add a New Routine
-1. Create file in `System/Routines/`
-2. Define trigger conditions
-3. List step-by-step AI instructions
+### AI-COO Never Will:
+- ❌ Make payments or sign contracts
+- ❌ Send communications without approval
+- ❌ Override your rejections
+- ❌ Cross defined guardrails
+- ❌ Hide actions from you
 
 ---
 
 ## 📊 Success Metrics
 
-Track these weekly during Review:
-- **Strategic Alignment %** → % of tasks serving North Star
-- **Bottleneck Focus %** → % of time on constraint
-- **Kill Rate** → % of proposed ideas that got iceboxed
-- **Log Completeness** → Are sessions being recorded?
+Track weekly:
+- Autonomous actions completed
+- Decisions escalated vs resolved
+- Time saved for strategic work
+- Goal progression
+- Guardrail integrity
 
 ---
 
 ## 🏁 Version
 
-- **Version:** 1.0.0
+- **Version:** 2.0.0 (AI-COO Edition)
 - **Created:** 2026-01-19
 - **Last Updated:** 2026-01-19
 
 ---
 
-*This OS evolves. Commit often. Learn always.*
+*Your AI-COO runs the business. You run the strategy.*
