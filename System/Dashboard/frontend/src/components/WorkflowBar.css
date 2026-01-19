@@ -1,0 +1,128 @@
+.workflow-section {
+    margin-bottom: var(--space-lg);
+}
+
+.workflow-bar {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md) var(--space-lg);
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-light);
+    overflow-x: auto;
+}
+
+.workflow-bar-label {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--text-tertiary);
+    white-space: nowrap;
+}
+
+.workflow-buttons {
+    display: flex;
+    gap: var(--space-sm);
+    overflow-x: auto;
+    padding-bottom: 2px;
+}
+
+.workflow-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-full);
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+}
+
+.workflow-btn:hover:not(:disabled) {
+    background: var(--accent-coral-light);
+    color: var(--accent-coral);
+    border-color: var(--accent-coral);
+    transform: translateY(-1px);
+}
+
+.workflow-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.workflow-icon {
+    font-size: 1rem;
+}
+
+.workflow-spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Workflow Result */
+.workflow-result {
+    margin-top: var(--space-md);
+    animation: fadeIn 0.3s ease-out;
+}
+
+.workflow-result.error {
+    border-color: var(--status-error);
+}
+
+.workflow-result-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-md) var(--space-lg);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.workflow-result-title {
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.workflow-result-content {
+    padding: var(--space-lg);
+    max-height: 300px;
+    overflow-y: auto;
+    background: var(--bg-secondary);
+}
+
+.workflow-result-content pre {
+    margin: 0;
+    font-family: 'SF Mono', Monaco, monospace;
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+/* Scrollbar for workflow buttons */
+.workflow-buttons::-webkit-scrollbar {
+    height: 4px;
+}
+
+.workflow-buttons::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.workflow-buttons::-webkit-scrollbar-thumb {
+    background: var(--border-medium);
+    border-radius: var(--radius-full);
+}

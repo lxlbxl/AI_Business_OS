@@ -1,0 +1,151 @@
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-xl);
+    background: var(--bg-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    background: var(--bg-card);
+    border-radius: var(--radius-xl);
+    padding: var(--space-2xl);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-light);
+    position: relative;
+    z-index: 1;
+    animation: fadeIn 0.6s ease-out;
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+}
+
+.login-icon {
+    width: 64px;
+    height: 64px;
+    background: var(--accent-peach-gradient);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-lg);
+    color: var(--accent-coral);
+}
+
+.login-header h1 {
+    font-size: 1.75rem;
+    margin-bottom: var(--space-sm);
+}
+
+.login-header p {
+    color: var(--text-tertiary);
+    margin: 0;
+    font-size: 0.9375rem;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.login-error {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: var(--radius-md);
+    color: var(--status-error);
+    font-size: 0.875rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.input-group label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.input-icon {
+    position: absolute;
+    left: var(--space-md);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-tertiary);
+    pointer-events: none;
+}
+
+.input-wrapper .input {
+    padding-left: 48px;
+}
+
+.login-btn {
+    width: 100%;
+    padding: var(--space-md) var(--space-lg);
+    font-size: 1rem;
+    margin-top: var(--space-sm);
+}
+
+.login-footer {
+    text-align: center;
+    margin-top: var(--space-xl);
+}
+
+/* Decorative circles */
+.login-decoration {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.decoration-circle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.4;
+}
+
+.decoration-circle-1 {
+    width: 400px;
+    height: 400px;
+    background: var(--accent-peach-gradient);
+    top: -150px;
+    right: -100px;
+    filter: blur(60px);
+}
+
+.decoration-circle-2 {
+    width: 300px;
+    height: 300px;
+    background: var(--accent-sage-light);
+    bottom: -100px;
+    left: -50px;
+    filter: blur(50px);
+}
+
+.decoration-circle-3 {
+    width: 200px;
+    height: 200px;
+    background: var(--accent-amber-light);
+    top: 40%;
+    left: 10%;
+    filter: blur(40px);
+}
